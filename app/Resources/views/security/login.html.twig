@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wokandy2.0</title>
+    {#bootstrap (main) - CSS #}
+    <link rel="stylesheet" href="https://cdn.votum-sa.pl/bootstrap-4.0.0/css/bootstrap.css" type="text/css"/>
+    {#kendo (main) - CSS #}
+    <link rel="stylesheet"
+          href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.common.min.css"/>
+    {#kendo bootstrap (main) - CSS #}
+    <link rel="stylesheet"
+          href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.bootstrap-v4.min.css"/>
+    {#kendo bootstrap (main) - CSS #}
+    <link rel="stylesheet"
+          href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.bootstrap.mobile.min.css"/>
+    {#bootstrap font-awesome (details) - CSS #}
+    {#<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">#}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {#bootstrap (main) - JS #}
+    <script type="text/javascript" src="https://cdn.votum-sa.pl/bootstrap-4.0.0/js/bootstrap.js"></script>
+    {#kendo jquery (main) - JS #}
+    <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/jquery.min.js"></script>
+    {#kendo all (main) - JS #}
+    <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/kendo.all.min.js"></script>
+    {#kendo (details) - JS #}
+    <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/messages/kendo.messages.pl-PL.min.js"></script>
+    <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/cultures/kendo.culture.pl-PL.min.js"></script>
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/>
+</head>
+
+<body>
+<div class="outer-wrapper">
+    <section class="container center-container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card login-div">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="logo-div">
+                                <img src="{{ asset('images/logo.png') }}"/>
+                            </div>
+                            <div class="login-icon">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="form" class="fieldlist">
+                            <form action='{{ path('login') }}' method='POST'>
+                                {% if error %}
+                                    <div id='form2Error'><i class="fa fa-exclamation-triangle"
+                                                            style="color: #ff0000"
+                                                            aria-hidden="true"></i>
+                                        <span class="form2Error">{{ error }}</span>
+                                    </div>
+                                {% endif %}
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <label>
+                                            <input name='username' type='text'
+                                                   class='k-textbox left form-input'
+                                                   placeholder='login' autofocus/>
+                                            <div class='form-icon'><i class='fa fa-user' aria-hidden='true'></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <label>
+                                            <input id='password' name='password' type='password'
+                                                   class='k-textbox left form-input' placeholder='hasło'/>
+                                            <div class='form-icon'><i class="fa fa-unlock"></i></div>
+                                        </label>
+                                    </div>
+                                    <div class='col-md-12 text-center login-button'>
+                                        <input type='submit' class='k-button form-button log_in'
+                                               value='Zaloguj się'/>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </section>
+</div>
+</body>
+</html>

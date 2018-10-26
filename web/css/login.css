@@ -1,0 +1,155 @@
+.outer-wrapper {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.center-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.card .card-header {
+    background-color: #c9262d;
+    padding: 5px 20px;
+}
+
+.card-body {
+    padding: 40px 50px;
+}
+
+.login-div {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0 0 5px 1px #c2c2c2;
+}
+
+.logo-div {
+    width: 85%;
+    padding: 15px 25px;
+}
+
+.logo-div img {
+    width: 100px
+}
+
+.login-icon {
+    width: 15%;
+    color: white;
+    border-left: 1px solid white;
+    padding: 8px 23px;
+    font-size: 25px;
+}
+
+label {
+    width: 100%;
+    margin-bottom: 30px
+}
+
+.form-icon {
+    width: 10%;
+    border-left: 1px solid #c2c2c2;
+    float: right;
+    height: 38px;
+    padding: 0px 10px;
+    font-size: 25px;
+    color: #757575;
+}
+
+.login-button {
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .login-div {
+        width: 310px
+    }
+
+    .logo-div {
+        padding: 15px 20px;
+    }
+
+    .login-icon {
+        padding: 15px 18px
+    }
+
+    .login-div img {
+        width: 100px
+    }
+
+    .form-input {
+        width: 85%
+    }
+
+    .form-icon {
+        width: 10%;
+        border-left: 1px solid #c2c2c2;
+        float: right;
+        height: 38px;
+        padding: 8px 8px;
+        font-size: 16px;
+        color: #757575;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: #757575;
+}
+
+ul {
+    list-style: none;
+}
+
+input, textarea {
+    border-radius: 0 !important
+}
+
+.form-input {
+    background-color: transparent;
+    border: none;
+}
+
+label {
+    background-color: #f4f4f4;
+    border: 1.5px solid #e2e2e2;
+    padding: 10px 15px;
+    width: 100%
+}
+
+.form2Error {
+    position: relative;
+    color: black;
+    text-align: center;
+}
+
+#form2Error {
+    padding: 15px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 2px solid #c9262e;
+}
+
+.fieldlist {
+    padding: 0;
+}
+
+.card, .card-header, .card-body, .card-header:first-child {
+    border-radius: 0;
+}
+
+.form-button {
+    width: 140px;
+    height: 50px;
+    border-radius: 0;
+    background-color: #c9262e;
+    color: white;
+    margin: auto;
+    cursor: pointer
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Wokandy2.0{% endblock %}</title>
+    {% block stylesheets %}
+        {#bootstrap (main) - CSS #}
+        <link rel="stylesheet" href="https://cdn.votum-sa.pl/bootstrap-4.0.0/css/bootstrap.css" type="text/css"/>
+        {#kendo (main) - CSS #}
+        <link rel="stylesheet"
+              href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.common.min.css"/>
+        {#kendo bootstrap (main) - CSS #}
+        <link rel="stylesheet"
+              href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.bootstrap-v4.min.css"/>
+        {#kendo bootstrap (main) - CSS #}
+        <link rel="stylesheet"
+              href="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/styles/kendo.bootstrap.mobile.min.css"/>
+        {#bootstrap font-awesome (details) - CSS #}
+        {#<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">#}
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset("css/main.css") }}"/>
+    {% endblock stylesheets %}
+    {% block javascriptlibraries %}
+        {#bootstrap (main) - JS #}
+        <script type="text/javascript" src="https://cdn.votum-sa.pl/bootstrap-4.0.0/js/bootstrap.js"></script>
+        {#kendo jquery (main) - JS #}
+        <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/jquery.min.js"></script>
+        {#kendo all (main) - JS #}
+        <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/kendo.all.min.js"></script>
+        {#kendo (details) - JS #}
+        <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/messages/kendo.messages.pl-PL.min.js"></script>
+        <script src="https://cdn.votum-sa.pl/kendoui.for.jquery.2018.3.911/js/cultures/kendo.culture.pl-PL.min.js"></script>
+    {% endblock javascriptlibraries %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/>
+</head>
+
+<body>
+
+<div class="container-fluid top-menu votum-red">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="left logo-nav">
+                    <a class=""><img src="{{ asset('images/logo.png') }}"/></a>
+                </div>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4" id="username">
+                {% if  app.user %}
+                    zalogowany jako: {{ app.user.username }}
+                {% endif %}
+            </div>
+            <div class="col-2 right log-border">
+                <a class="logout" href="{{ path('logout') }}"><span>WYLOGUJ </span><i class="fa fa-sign-out"
+                                                                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="desktop-nav">
+    <nav class="top-nav">
+        <ul class="nav nav-pills nav-fill user_menu">
+            <li class="nav-item">
+                <a id="item1" class="nav-link item1" href=""><i class="fa fa-user-o" aria-hidden="true"></i>Item1</a>
+            </li>
+            <li class="nav-item">
+                <a id="item2" class="nav-link item2" href=""><i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                    Item2</a>
+            </li>
+            <li class="nav-item">
+                <a id="item3" class="nav-link item3" href=""><i class="fa fa-question" aria-hidden="true"></i> Item3</a>
+            </li>
+            <li class="nav-item">
+                <a id="item4" class="nav-link item4" href=""><i class="fa fa-phone" aria-hidden="true"></i>Item4</a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </nav>
+</div>
+<section class="container">
+    {% block body %}{% endblock %}
+</section>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

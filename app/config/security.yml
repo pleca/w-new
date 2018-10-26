@@ -1,0 +1,32 @@
+security:
+
+    encoders:
+            AppBundle\Security\User\WebserviceUser: plaintext
+            #The value here should correspond with however the passwords were originally encoded when creating your
+            #users (however those users were created). When a user submits their password, it's encoded using this
+            #algorithm and the result is compared to the hashed password returned by your getPassword() method.
+            #https://symfony.com/doc/3.4/security/custom_provider.html#modify-security-yml
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        db_provider:
+            id: AppBundle\Security\User\UserProvider
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        secured_area:
+            anonymous: ~
+            logout:
+                path:   /logout
+                target: /
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
+
+    access_control:
+            - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/, roles: ROLE_USER }

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_USER') %}
+    <H1>STRONA TEST</H1>
+    <h1>zalogowany!</h1>
+    <li><a href="{{ path('logout') }}">wyloguj</a></li>
+    <li><a href="{{ path('homepage') }}">homepage</a></li>
+    {% else %}
+    <h3>niezalogowany :( </h3>
+    {% endif %}
+{% endblock %}
+
+{#{% block stylesheets %}#}
+{#{% endblock %}#}
